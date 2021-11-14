@@ -10,7 +10,7 @@ AppBar buildAppBar() => AppBar(
         Padding(
           padding: EdgeInsets.all(Constants.kPadding),
           child: CircleAvatar(
-            backgroundImage: AssetImage("assets/images/profile.jpeg"),
+            backgroundImage: AssetImage("assets/images/profile2.jpeg"),
           ),
         ),
       ],
