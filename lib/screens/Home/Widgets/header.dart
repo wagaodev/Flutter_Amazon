@@ -17,7 +17,7 @@ List<Widget> buildHeader() => [
         padding: EdgeInsets.symmetric(
             horizontal: 2 * Constants.kPadding, vertical: Constants.kPadding),
         child: Text(
-          'Welcome Motherfuckers',
+          'Welcome Flutter Maps',
           style: TextStyle(
             color: Colors.black54,
           ),
