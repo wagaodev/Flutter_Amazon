@@ -55,32 +55,50 @@ class BuildBookList extends StatelessWidget {
               children: List.generate(
                 books.length,
                 (index) => Padding(
-                    padding: EdgeInsets.only(
-                      bottom: Constants.kPadding * 2,
-                      right: Constants.kPadding,
-                      left: index == 0 ? Constants.kPadding : 0,
+                  padding: EdgeInsets.only(
+                    bottom: Constants.kPadding * 2,
+                    right: Constants.kPadding,
+                    left: index == 0 ? Constants.kPadding : 0,
+                  ),
+                  child: InkWell(
+                    onTap: () {},
+                    child: Column(
+                      children: [
+                        Card(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          elevation: 4,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.asset(
+                              books[index].image,
+                              height: 180,
+                              width: 120,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          width: 120,
+                          child: Text(
+                            books[index].title,
+                          ),
+                        ),
+                        Container(
+                          width: 120,
+                          child: Text(
+                            books[index].subtitle,
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: Colors.blueGrey,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                    child: InkWell(
-                      onTap: () {},
-                      child: Column(
-                        children: [
-                          Card(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            elevation: 4,
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(10),
-                              child: Image.asset(
-                                books[index].image,
-                                height: 180,
-                                width: 120,
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                    )),
+                  ),
+                ),
               ),
             ),
           ),
