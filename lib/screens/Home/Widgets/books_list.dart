@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_amazon/models/book_model.dart';
 import 'package:flutter_amazon/utils/constants.dart';
 
-final List<BookModel> books = ['']; // we need to create this model as well.
+final List<BookModel> books = BookModel.books;
 
 class BuildBookList extends StatelessWidget {
   const BuildBookList({Key? key}) : super(key: key);
@@ -50,8 +51,38 @@ class BuildBookList extends StatelessWidget {
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: List.generate(books.length, (index) => null)),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: List.generate(
+                books.length,
+                (index) => Padding(
+                    padding: EdgeInsets.only(
+                      bottom: Constants.kPadding * 2,
+                      right: Constants.kPadding,
+                      left: index == 0 ? Constants.kPadding : 0,
+                    ),
+                    child: InkWell(
+                      onTap: () {},
+                      child: Column(
+                        children: [
+                          Card(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            elevation: 4,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                books[index].image,
+                                height: 180,
+                                width: 120,
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    )),
+              ),
+            ),
           ),
         ],
       ),
