@@ -13,6 +13,14 @@ class BookModel {
     required this.favorite,
   });
 
+  static BookModel newBook = BookModel(
+    image: "assets/images/new_book_1.jpeg",
+    secondImage: "assets/images/new_book_1.jpeg",
+    title: "Raft Os Stars",
+    subtitle: "Andrew J. Graff",
+    favorite: true,
+  );
+
   static List<BookModel> books = [
     BookModel(
       image: "assets/images/book_1.jpeg",
