@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_amazon/models/book_model.dart';
+import 'package:flutter_amazon/screens/Book/book_screen.dart';
 import 'package:flutter_amazon/utils/constants.dart';
 
 final newBook = BookModel.newBook;
@@ -32,7 +33,14 @@ class BuildNewBook extends StatelessWidget {
           ),
         ),
         InkWell(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BookScreen(book: newBook),
+              ),
+            );
+          },
           child: Column(
             children: [
               Padding(
