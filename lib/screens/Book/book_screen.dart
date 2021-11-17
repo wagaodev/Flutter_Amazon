@@ -31,10 +31,12 @@ class _BookScreenState extends State<BookScreen> {
             padding: EdgeInsets.all(Constants.kPadding),
             child: IconButton(
               icon: Icon(
-                Icons.favorite,
+                widget.book.favorite ? Icons.favorite : Icons.favorite_border,
                 color: Colors.red,
               ),
-              onPressed: () {},
+              onPressed: () {
+                widget.book.favorite = !widget.book.favorite;
+              },
             ),
           ),
         ],
